@@ -1,0 +1,40 @@
+$colors: rgb(221, 217, 217), rgb(240, 234, 234), rgb(179, 148, 148),
+  rgb(122, 104, 104), rgb(95, 69, 69), rgb(95, 83, 83);
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserra";
+}
+
+h1 {
+  margin: 3rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  //grid-gap: rem;
+  cursor: pointer;
+  .card {
+    transition: transform 1s;
+    @for $i from 1 through 6 {
+      &:nth-of-type(#{$i}) {
+        background: nth($colors, $i);
+      }
+    }
+    &:hover {
+      transform: translateY(-20px);
+    }
+
+    img {
+      width: 100%;
+    }
+    .info {
+      padding: 1rem;
+    }
+  }
+}
